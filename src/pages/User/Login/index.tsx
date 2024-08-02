@@ -9,7 +9,7 @@ import {
   ProFormText,
 } from '@ant-design/pro-components';
 import { history, useModel, Helmet } from '@umijs/max';
-import { Alert, message, Tabs } from 'antd';
+import { message, Tabs } from 'antd';
 import Settings from '../../../../config/defaultSettings';
 import React, {useEffect, useState} from 'react';
 import { flushSync } from 'react-dom';
@@ -54,9 +54,9 @@ const useStyles = createStyles(({ token }) => {
 });
 
 const Login: React.FC = () => {
-  const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
+  // const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
-  const { initialState, setInitialState } = useModel('@@initialState');
+  const {setInitialState } = useModel('@@initialState');
   const { styles } = useStyles();
 
   /**
@@ -66,10 +66,12 @@ const Login: React.FC = () => {
     const userInfo = await getLoginUserUsingGet();
     if (userInfo) {
       flushSync(() => {
-        setInitialState((s) => ({
-          ...s,
-          currentUser: userInfo,
-        }));
+        setInitialState((s): any => {
+          return ({
+            ...s,
+            currentUser: userInfo,
+          });
+        });
       });
     }
   };
