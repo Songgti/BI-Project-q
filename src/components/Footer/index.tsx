@@ -12,19 +12,19 @@ const Footer: React.FC = () => {
         {
           key: 'Songgt BI',
           title: 'Songgt BI',
-          href: 'https://pro.ant.design',
+          href: 'https://github.com/Songgti/BI-Project-q',
           blankTarget: true,
         },
         {
           key: 'github',
           title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          href: 'https://github.com/Songgti/BI-Project-q',
           blankTarget: true,
         },
         {
           key: 'Songgt BI',
           title: 'Songgt BI',
-          href: 'https://ant.design',
+          href: 'https://github.com/Songgti/BI-Project-q',
           blankTarget: true,
         },
       ]}
